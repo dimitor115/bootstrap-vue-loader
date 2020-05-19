@@ -1,21 +1,10 @@
 {
-  "name": "vuetify-loader",
-  "version": "1.4.3",
-  "description": "A Webpack plugin for treeshaking Vuetify components and more",
+  "name": "bootstrap-vue-loader",
+  "version": "1.0.0-SNAPSHOT",
+  "description": "A Webpack plugin for automatic importing BootstrapVue components and directives for treeshaking",
   "main": "lib/index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vuetifyjs/vuetify-loader.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
+  "author": "dimitor115 (Maciej Kopec) & VuetifyLoader team",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vuetifyjs/vuetify-loader/issues"
-  },
-  "homepage": "https://github.com/vuetifyjs/vuetify-loader#readme",
   "dependencies": {
     "loader-utils": "^1.2.0",
     "file-loader": "^4.0.0"
