@@ -1,4 +1,4 @@
-#BootstrapVue Loader
+# BootstrapVue Loader
 A Webpack plugin for automatic importing BootstrapVue components and directives for treeshaking.
 
 With this plugin help you can remove your global BootstrapVue import and forget about manually importing each component
