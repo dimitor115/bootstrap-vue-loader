@@ -6,10 +6,14 @@ for optimal bundle size. This plugin will do it for you!
 
 This is some kind of [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) fork, and I would like to thank that team for hard work. 
 
-This an early version and few things still have to be done: 
-* Dealing with the bvModal / bvToast usage. (Some global import if usage detected?)
-* Testing strategy (some Cypress tests?, vue unit tests?)
+Roadmap to first stable version (1.0)
+* [x] Dynamic component importing
+* [x] Dynamic directives importing
+* [ ] (in progress) Component test setup (Generating test components from docs examples)
+* [ ] Testing proper loading
 
+Current limitation: 
+* Automatic global bvModal / bvToast plugin importing
 
 ## Want to check it?
 Just go to `/dev` directory, install dependencies (`yarn`) and run `yarn serve`. 
