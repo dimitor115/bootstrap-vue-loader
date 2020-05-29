@@ -7,30 +7,26 @@ extractEveryComponentExampleFromDocumentation()
     .then(saveRouterConfig)
 
 async function saveRouterConfig(config) {
-    const r = await fs.readFile('./test/test-vue-instance/src/router/index.js', 'utf8')
-    const updated = r.replace('//TO BE INJECTED', config)
-    console.log(updated)
+    const router = await fs.readFile('./test/test-vue-instance/src/router/index.js', 'utf8')
+    const updated = router.replace('//TO BE INJECTED', config)
     await fs.writeFile('./test/test-vue-instance/src/router/index.js', updated)
 }
 
-function generateRouterConfig(xs) {
-    const imports = xs.map(x => `import ${x} from '../components/${x}.vue'`).join('\n')
-    const routes = xs.map(x => `{path: '/${x}', component: ${x}}`).join(',')
-    const content =
-        `   ${imports}
-            const routes = [${routes}]
-        `
-    return content
+function generateRouterConfig(components) {
+    const imports = components.map(component => `import ${component} from '../components/${component}.vue'`).join('\n')
+    const routes = components.map(component => `{path: '/${component}', component: ${component}}`).join(',')
+    return `
+       ${imports}
+       const routes = [${routes}]
+    `
 }
 
 async function saveComponentsToFiles(components) {
-    console.log(components.length)
     await Promise.all(
-        components.map((c, i) =>
-            fs.writeFile('./test/test-vue-instance/src/components/c' + i + '.vue', c)
-        )
+        components.map(({component, example}) =>
+            fs.writeFile(`./test/test-vue-instance/src/components/${component}.vue`, example))
     )
-    return components.map((c, i) => 'c' + i)
+    return components.map(({component}) => component)
 }
 
 async function extractEveryComponentExampleFromDocumentation() {
@@ -38,21 +34,30 @@ async function extractEveryComponentExampleFromDocumentation() {
         shell.echo('Sorry, this script requires git')
         shell.exit(1)
     }
-// shell.exec('git clone https://github.com/bootstrap-vue/bootstrap-vue.git ./test/raw-bootstrap-vue')
+    shell.exec('git clone https://github.com/bootstrap-vue/bootstrap-vue.git ./test/raw-bootstrap-vue')
+
     const dirs = await fs.readdir('./test/raw-bootstrap-vue/src/components')
-    const examples = dirs.map(f =>
-        fs.readFile('./test/raw-bootstrap-vue/src/components/' + f + '/README.md', 'utf8')
+    if(!dirs.length) { throw Error("No components!")}
+
+    const examples = dirs.map(component =>
+        fs.readFile(`./test/raw-bootstrap-vue/src/components/${component}/README.md`, 'utf8')
             .then(file => {
                 if (!file) return undefined
-                const i = file.indexOf('```html')
-                const p = file.indexOf('```', i + 1)
-                const example =  file.substring(i + 7, p)
+                const start = file.indexOf('```html')
+                const end = file.indexOf('```', start + 1)
+                const example =  file.substring(start + 7, end)
+                const name = camelize(component)
                 if(example.indexOf('<template>') < 0) {
-                    return `<template> \n ${example} \n </template>`
+                    return {component: name, example: `<template> \n ${example} \n </template>`}
                 }
-                return example
+                return {component: name, example}
             })
             .catch(() => undefined)
     )
-    return Promise.all(examples)
+    return Promise.all(examples).then(it => it.filter(c => !!c))
+}
+
+const camelizeRE = /-(\w)/g
+const camelize = str => {
+    return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : '')
 }
