@@ -3,6 +3,7 @@ const fs = require('fs').promises
 
 extractEveryComponentExampleFromDocumentation()
     .then(saveComponentsToFiles)
+    .then(generateCypressTests)
     .then(generateRouterConfig)
     .then(saveRouterConfig)
 
@@ -29,12 +30,22 @@ async function saveComponentsToFiles(components) {
     return components.map(({component}) => component)
 }
 
+async function generateCypressTests(components) {
+    const scenarios = components.map(component => `
+        it("${component}", () => {
+            cy.visit("/${component}")
+        })
+    `)
+    await fs.writeFile(`./test/integration/loading_spec.js`, scenarios.join('\n'))
+    return components
+}
+
 async function extractEveryComponentExampleFromDocumentation() {
     if (!shell.which('git')) {
         shell.echo('Sorry, this script requires git')
         shell.exit(1)
     }
-    shell.exec('git clone https://github.com/bootstrap-vue/bootstrap-vue.git ./test/raw-bootstrap-vue')
+    // shell.exec('git clone https://github.com/bootstrap-vue/bootstrap-vue.git ./test/raw-bootstrap-vue')
 
     const dirs = await fs.readdir('./test/raw-bootstrap-vue/src/components')
     if(!dirs.length) { throw Error("No components!")}

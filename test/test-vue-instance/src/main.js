@@ -8,6 +8,13 @@ import 'bootstrap-vue/dist/bootstrap-vue.css' // is it necessary?
 // Vue.use(BootstrapVue)
 Vue.config.productionTip = false
 
+Vue.config.errorHandler = function(err/*, vm, info*/) {
+  throw err
+}
+Vue.config.warnHandler = function(err/*, vm, info*/) {
+  throw Error(err)
+}
+
 new Vue({
   router,
   render: function (h) { return h(App) }
