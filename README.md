@@ -9,8 +9,8 @@ This is some kind of [vuetify-loader](https://github.com/vuetifyjs/vuetify-loade
 Roadmap to first stable version (1.0)
 * [x] Dynamic component importing
 * [x] Dynamic directives importing
-* [ ] (in progress) Component test setup (Generating test components from docs examples)
-* [ ] Testing proper loading
+* [x] Component test setup (Generating test components from docs examples)
+* [x] Testing proper components and directives loading
 
 Current limitation: 
 * Automatic global bvModal / bvToast plugin importing
