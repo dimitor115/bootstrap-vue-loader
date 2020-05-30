@@ -8,7 +8,7 @@ Example of chunks distribution between build with global BoostrapVue import and 
 
 ## How to use it
 
-`npm install -dev bootstrap-vue-loader`
+`npm install -D bootstrap-vue-loader`
 
 `yarn add -D bootstrap-vue-loader`
 
@@ -43,6 +43,6 @@ BootstrapVue components are rendered, but there is no import anywhere.
 ## Testing strategy
 To be sure that this plugin is working well with every component and directive available in BootstrapVue I've implemented a quite interesting approach. The test components are generated automatically from the library documentation and then tested by cypress scenarios. Thanks to that there is no need to manually write a new test for each component delivered in future versions of BootstrapVue. Just upgrade a version in the project and re-run the test pipeline! 
 
-## Credits: 
+## Credits
 This is kind of [vuetify-loader](https://github.com/vuetifyjs/vuetify-loader) fork, and I would like to thank that team for hard work and inspiration. 
 
