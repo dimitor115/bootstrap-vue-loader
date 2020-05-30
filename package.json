@@ -1,9 +1,9 @@
 {
   "name": "bootstrap-vue-loader",
   "version": "1.0.0-SNAPSHOT",
-  "description": "A Webpack plugin for automatic importing BootstrapVue components and directives for treeshaking",
+  "description": "A Webpack plugin for automatic importing BootstrapVue components and directives for treeshaking.",
   "main": "lib/index.js",
-  "author": "dimitor115 (Maciej Kopec) & VuetifyLoader team",
+  "author": "dimitor115 (Maciej Kopec)",
   "license": "MIT",
   "scripts": {
     "serve:test": "yarn --cwd test/test-vue-instance && yarn --cwd test/test-vue-instance serve",
