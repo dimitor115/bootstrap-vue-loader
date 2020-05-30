@@ -1,17 +1,21 @@
 {
   "name": "bootstrap-vue-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Webpack plugin for automatic BootstrapVue components and directives importing, mainly for treeshaking",
-  "main": "lib/index.js",
+  "main": "lib/plugin.js",
   "author": "dimitor115 (Maciej Kopec)",
   "license": "MIT",
   "repository": "https://github.com/dimitor115/bootstrap-vue-loader",
   "scripts": {
+    "serve:dev": "yarn --cwd dev serve",
     "serve:test": "yarn --cwd test/test-vue-instance && yarn --cwd test/test-vue-instance serve",
     "test:cypress": "cypress run",
     "test": "node test/runner.js",
     "test:clear": "node test/cleaner.js"
   },
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "file-loader": "^4.0.0",
     "loader-utils": "^1.2.0"
