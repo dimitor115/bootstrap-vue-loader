@@ -2,7 +2,10 @@
 A Webpack plugin for automatic BootstrapVue components and directives importing, mainly for treeshaking. Reduce the bundle size and achieve even distribution of chunks size, without the need for manual importing each used component.
 
 Example of chunks distribution between build with global BoostrapVue import and build with the plugin: 
-![With global import](docs/chunks_with_normal_global_import.png) ![With loader](docs/chunks_with_loader_usage.png)
+
+![With global import](docs/chunks_with_normal_global_import.png) 
+![With loader](docs/chunks_with_loader_usage.png)
+
 ## How to use it
 
 `npm install -dev bootstrap-vue-loader`
@@ -27,8 +30,8 @@ remember to *REMOVE* global BootstrapVue import!
 
 ## When use it? 
 
-If you use only some of the available BoostrapVue components and don't want to take care of manual importing but still you want to minimize the bundle size (smaller bundle == faster page). 
-If you have a big project with a lot of pages, and you want to achieve a better distribution of chunks size (no one wants to ship to the user components that are not used on the current page)
+* If you use only some of the available BoostrapVue components and don't want to take care of manual importing but still you want to minimize the bundle size (smaller bundle == faster page). 
+* If you have a big project with a lot of pages, and you want to achieve a better distribution of chunks size (no one wants to ship to the user components that are not used on the current page)
 
 ## Current limitation: 
 If you are using the global bvModal / bvToast plugin you need to import them manually : 
