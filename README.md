@@ -29,7 +29,7 @@ Remember to **REMOVE** global BootstrapVue import!
 // import BootstrapVue from 'bootstrap-vue'
 // Vue.use(BootstrapVue)
 ```
-
+Check example configured project: `dev/vue-cli`.
 ### nuxt.js
 nuxt.config.js
 ```javascript
@@ -54,7 +54,7 @@ modules: [
     // 'bootstrap-vue/nuxt',
   ],
 ```
-
+Check example configured project: `dev/nuxt`.
 
 ## When use it? 
 
