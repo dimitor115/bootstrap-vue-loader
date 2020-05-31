@@ -12,7 +12,9 @@ Example of chunks distribution between build with global BoostrapVue import and 
 
 `yarn add -D bootstrap-vue-loader`
 
-in vue.config.js
+### vue-cli
+
+vue.config.js
 ```javascript
 const BootstrapVueLoader = require('bootstrap-vue-loader')
 module.exports = {
@@ -22,11 +24,37 @@ module.exports = {
 }
 ```
 
-remember to *REMOVE* global BootstrapVue import!
+Remember to **REMOVE** global BootstrapVue import!
 ```javascript
 // import BootstrapVue from 'bootstrap-vue'
 // Vue.use(BootstrapVue)
 ```
+
+### nuxt.js
+nuxt.config.js
+```javascript
+import BootstrapVueLoader from 'bootstrap-vue-loader'
+
+export default {
+    css: [
+        'bootstrap/dist/css/bootstrap.min.css',
+        'bootstrap-vue/dist/bootstrap-vue.css'
+      ],
+    build: {
+        plugins: [
+          new BootstrapVueLoader()
+        ]
+      }
+}
+```
+With above config there is no need for global BootstrapVue module.
+Remove it if you already have it configured: 
+```
+modules: [
+    // 'bootstrap-vue/nuxt',
+  ],
+```
+
 
 ## When use it? 
 
@@ -34,7 +62,34 @@ remember to *REMOVE* global BootstrapVue import!
 * If you have a big project with a lot of pages, and you want to achieve a better distribution of chunks size (no one wants to ship to the user components that are not used on the current page)
 
 ## Current limitation: 
-If you are using the global bvModal / bvToast plugin you need to import them manually : 
+If you are using the global bvModal / bvToast plugin you need to import them manually
+
+### vue-cli
+main.js
+```javascript
+import { ModalPlugin } from 'bootstrap-vue'
+Vue.use(ModalPlugin)
+```
+
+### nuxt.js
+nuxt.config.js
+```javascript
+import BootstrapVueLoader from 'bootstrap-vue-loader'
+
+ export default {
+    modules: [
+        'bootstrap-vue/nuxt',
+    ],
+    bootstrapVue: {
+        componentPlugins: ['BVModalPlugin'],
+    },
+    build: {
+        plugins: [
+            new BootstrapVueLoader()
+        ]
+    }
+}
+```
 
 ## Want to play with it?
 Just go to `/dev` directory, install dependencies (`yarn`) and run `yarn serve`. 

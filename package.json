@@ -7,7 +7,6 @@
   "license": "MIT",
   "repository": "https://github.com/dimitor115/bootstrap-vue-loader",
   "scripts": {
-    "serve:dev": "yarn --cwd dev serve",
     "serve:test": "yarn --cwd test/test-vue-instance && yarn --cwd test/test-vue-instance serve",
     "test:cypress": "cypress run",
     "test": "node test/runner.js",
