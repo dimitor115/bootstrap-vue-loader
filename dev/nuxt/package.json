@@ -1,0 +1,21 @@
+{
+  "name": "nuxt",
+  "version": "1.0.0",
+  "description": "Testing nuxt config",
+  "author": "dimitor115",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build -a",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "bootstrap-vue": "^2.0.0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "bootstrap-vue-loader": "^1.0.1"
+  }
+}

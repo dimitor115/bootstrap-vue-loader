@@ -1,4 +1,4 @@
-const BootstrapVueLoader = require("../lib/plugin")
+const BootstrapVueLoader = require("bootstrap-vue-loader")
 module.exports = {
     configureWebpack: {
         plugins: [
