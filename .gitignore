@@ -4,3 +4,4 @@ node_modules
 components
 raw-bootstrap-vue
 integration
+.DS_Store
