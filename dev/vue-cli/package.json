@@ -7,19 +7,18 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.15.0",
-    "vue": "^2.6.11"
+    "bootstrap-vue": "^2.17.3",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@vue/cli-service": "~4.3.0",
-    "bootstrap": "^4.3.1",
-    "bootstrap-vue-loader": "1.0.1",
+    "@vue/cli-service": "~4.5.7",
+    "bootstrap": "^4.5.2",
     "popper.js": "^1.16.0",
     "portal-vue": "^2.1.6",
-    "sass": "^1.19.0",
-    "sass-loader": "^8.0.0",
-    "vue-cli-plugin-bootstrap-vue": "~0.6.0",
-    "vue-template-compiler": "^2.6.11"
+    "sass": "^1.26.12",
+    "sass-loader": "^10.0.2",
+    "vue-cli-plugin-bootstrap-vue": "~0.7.0",
+    "vue-template-compiler": "^2.6.12"
   },
   "browserslist": [
     "> 1%",

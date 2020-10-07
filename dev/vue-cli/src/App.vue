@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import HelloWorld from 'dev/vue-cli/src/components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',

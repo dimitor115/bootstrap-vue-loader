@@ -1,7 +1,7 @@
 import BootstrapVueLoader from 'bootstrap-vue-loader'
 
 export default {
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
@@ -48,6 +48,7 @@ export default {
   bootstrapVue: {
     //When you want to use globa
     componentPlugins: ['BVModalPlugin'],
+    // components: ['BLink'],
     bootstrapCSS: false,
     bootstrapVueCSS: false
   },

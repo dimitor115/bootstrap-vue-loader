@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <logo />
+<!--      <logo />-->
       <h1 class="title">
         nuxt
       </h1>
@@ -37,17 +37,25 @@
           </div>
           <b-button class="mt-3" block @click="$bvModal.hide('bv-modal-example')">Close Me</b-button>
         </b-modal>
+
+        <cta :is-link="true" :has-url-data="true">
+          <b-card>Teest</b-card>
+        </cta>
+        <cta :is-link="true" :has-url-data="false">
+        </cta>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+// import Logo from '~/components/Logo.vue'
+import Cta from '~/components/cta.vue'
 
 export default {
   components: {
-    Logo
+    Cta,
+    // Logo
   }
 }
 </script>
