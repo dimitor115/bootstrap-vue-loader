@@ -1,7 +1,7 @@
 node_modules
 .idea
 *.iml
-components
+test/test-vue-instance/components
 raw-bootstrap-vue
 integration
 .DS_Store

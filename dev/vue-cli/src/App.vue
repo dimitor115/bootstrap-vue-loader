@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="src/assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
     <b-card header="NANANAN">XD
       <b-button v-b-popover.hover="'I am popover content!'" title="Popover Title"></b-button>
     </b-card>
@@ -27,8 +26,6 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'App',
   components: {
