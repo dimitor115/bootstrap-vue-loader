@@ -7,13 +7,14 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.17.3",
+    "bootstrap-vue": "2.21.2",
     "vue": "^2.6.12"
   },
   "devDependencies": {
     "@vue/cli-service": "~4.5.7",
     "bootstrap": "^4.5.2",
     "popper.js": "^1.16.0",
+
     "portal-vue": "^2.1.6",
     "sass": "^1.26.12",
     "sass-loader": "^10.0.2",
