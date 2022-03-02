@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-vue-loader",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A Webpack plugin for automatic BootstrapVue components and directives importing, mainly for treeshaking",
   "main": "lib/plugin.js",
   "author": "dimitor115 (Maciej Kopec)",
